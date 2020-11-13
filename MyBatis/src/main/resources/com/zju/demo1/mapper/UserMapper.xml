@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zju.demo1.mapper.UserMapper">
+
+    <!-- 通过name查询 -->
+    <select id="getByName" resultType="userModel">
+        <![CDATA[
+        SELECT * FROM t_user WHERE name = #{value} LIMIT 1
+        ]]>
+    </select>
+
+                    <!--todo resultType 不是resultMap-->
+    <select id="getByMap" resultType="userModel">
+       <![CDATA[
+        SELECT * FROM t_user WHERE id=#{id} OR name = #{name}
+        ]]>
+   </select>
+
+
+    <!-- 通过map查询 -->
+    <select id="getListByUserFindDto" parameterType="userFindDto" resultType="userModel">
+        <![CDATA[
+        SELECT * FROM t_user WHERE id=#{userId} OR name = #{userName}
+        ]]>
+    </select>
+
+    <!-- 通过id或者name查询 -->
+    <select id="getByIdOrName" resultType="userModel">
+        <![CDATA[
+          SELECT * FROM t_user WHERE id=#{userId} OR name=#{userName} limit 1
+        ]]>
+    </select>
+
+    <!-- 通过用户id列表查询 -->
+    <select id="getListByIdCollection" resultType="userModel">
+        <![CDATA[
+        SELECT * FROM t_user WHERE id IN (#{collection[0]},#{collection[1]})
+        ]]>
+    </select>
+
+    <!-- 通过用户id列表查询 -->
+    <select id="getListByIdList" resultType="userModel">
+        <![CDATA[
+        SELECT * FROM t_user WHERE id IN (#{list[0]},#{collection[1]})
+        ]]>
+    </select>
+
+    <!-- 通过用户id列表查询 -->
+    <select id="getListByIdArray" resultType="userModel">
+        <![CDATA[
+        SELECT * FROM t_user WHERE id IN (#{array[0]},#{array[1]})
+        ]]>
+    </select>
+
+    <select id="getList" resultType="userModel">
+        <![CDATA[
+        SELECT * FROM t_user
+        ]]>
+    </select>
+</mapper>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--properties  typeAliases environments 都有严格顺序 -->
+    <!-- 引入外部jdbc配置 -->
+    <properties resource="jdbc.properties"/>
+    <!-- 是否开启自动驼峰命名规则映射，及从xx_yy映射到xxYy -->
+    <settings>
+        <!--驼峰命名-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!--自动映射 NONE PARTIAL（默认） FULL-->
+        <setting name="autoMappingBehavior" value="FULL"/>
+        <!--打开延迟加载的开关  -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!-- 当为true的时候，调用任意延迟属性，会去加载所有延迟属性，如果为false，则调用某个属性的时候，只会加载指定的属性 -->
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <!--开启二级缓存-->
+        <setting name="cacheEnabled" value="true"></setting>
+
+    </settings>
+    <!--为包下所有的类取别名，默认首字母小写-->
+    <typeAliases>
+        <package name="com.zju.demo1.model"></package>
+        <package name="com.zju.demo1.dto"></package>
+    </typeAliases>
+    <!-- 环境配置，可以配置多个环境 -->
+    <environments default="kk">
+        <environment id="kk">
+            <!-- 事务管理器工厂配置 -->
+            <transactionManager type="JDBC"/>
+            <!-- 数据源工厂配置，使用工厂来创建数据源 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <!--<package name="com.zju.demo1.mapper"/>-->
+        <!--<package name="com.zju.demo2_Anno.Mapper"/>-->
+        <package name="com.zju.demo3.mapper"/>
+    </mappers>
+</configuration>

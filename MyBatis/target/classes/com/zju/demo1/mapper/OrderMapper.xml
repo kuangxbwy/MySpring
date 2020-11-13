@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zju.demo1.mapper.OrderMapper">
+
+     <!--普通查询-->
+    <resultMap id="kk" type="com.zju.demo1.model.OrderModel">
+        <id column="id" property="id" />
+        <result column="user_id" property="userId" />
+        <result column="create_time" property="createTime" />
+        <result column="up_time" property="upTime" />
+    </resultMap>
+    <select id="getById" resultMap="kk">
+        SELECT a.id,a.user_id,a.create_time,a.up_time FROM t_order a WHERE a.id=#{value}
+    </select>
+
+    <!--一对一查询 association-->
+    <resultMap id="orderModelMap" type="com.zju.demo1.model.OrderModel">
+        <id column="id" property="id" />
+        <result column="user_id" property="userId"/>
+        <result column="create_time" property="createTime"/>
+        <result column="up_time" property="upTime"/>
+        <association property="userModel">
+            <id column="user_id" property="id"/>
+            <result column="name" property="name" />
+        </association>
+    </resultMap>
+
+    <select id="getById1" resultMap="orderModelMap">
+        <![CDATA[
+    SELECT
+        a.id,
+        a.user_id,
+        a.create_time,
+        a.up_time,
+        b.name
+    FROM
+        t_order a,
+        t_user b
+    WHERE
+        a.user_id = b.id
+    AND a.id = #{value}
+    ]]>
+    </select>
+
+
+    <!--一对多查询-->
+    <resultMap id="orderModelMap1" type="com.zju.demo1.model.OrderModel">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="create_time" property="createTime"/>
+        <result column="up_time" property="upTime"/>
+        <!--todo 一对多==collection-->
+        <collection property="orderDetailModelList" ofType="com.zju.demo1.model.OrderDetailModel">
+            <id column="orderDetailId" property="id"/>
+            <result column="order_id" property="orderId"/>
+            <result column="goods_id" property="goodsId"/>
+            <result column="num" property="num"/>
+            <result column="total_price" property="totalPrice"/>
+        </collection>
+    </resultMap>
+
+    <select id="getById2" resultMap="orderModelMap1">
+        <![CDATA[
+        SELECT
+            a.id ,
+            a.user_id,
+            a.create_time,
+            a.up_time,
+            b.id orderDetailId,
+            b.order_id,
+            b.goods_id,
+            b.num,
+            b.total_price
+        FROM
+            t_order a,
+            t_order_detail b
+        WHERE
+            a.id = b.order_id
+            AND a.id = #{value}
+        ]]>
+    </select>
+</mapper>
