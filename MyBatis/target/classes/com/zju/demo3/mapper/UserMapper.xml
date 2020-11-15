@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zju.demo3.mapper.UserMapper">
     <!-- 启用二级缓存 -->
-    <!--<cache/>-->
+    <cache/>
    <sql id="findSql">
        <where>
            <if test="id!=null">
@@ -43,7 +43,10 @@
        <include refid="findSql" />
    </select>
 
-    <select id="getList2" flushCache="true"  resultType="com.zju.demo3.model.UserModel" parameterType="map">
+    <!--flushCache="true" useCache="false" 都会关闭二级缓存
+     flushCache="true" 还会关闭一级缓存
+     -->
+    <select id="getList2" flushCache="true" useCache="false"  resultType="com.zju.demo3.model.UserModel" parameterType="map">
         SELECT id,name,age FROM user_dynamic
         <where>
             <choose>

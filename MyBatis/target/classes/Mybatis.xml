@@ -41,8 +41,8 @@
     </environments>
 
     <mappers>
-        <!--<package name="com.zju.demo1.mapper"/>-->
+        <package name="com.zju.demo1.mapper"/>
         <!--<package name="com.zju.demo2_Anno.Mapper"/>-->
-        <package name="com.zju.demo3.mapper"/>
+        <!--<package name="com.zju.demo3.mapper"/>-->
     </mappers>
 </configuration>

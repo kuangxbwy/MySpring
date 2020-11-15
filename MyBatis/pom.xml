@@ -12,19 +12,19 @@
     <artifactId>MyBatis</artifactId>
 
 
-    <dependencies>
+        <!--解决SpringJUnit4ClassRunner找不到 将scope删除-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-test</artifactId>-->
+            <!--<version>5.0.9.RELEASE</version>-->
+        <!--</dependency>-->
+<dependencies>
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>3.4.6</version>
         </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.16.10</version>
-        </dependency>
-    </dependencies>
-
+</dependencies>
    <build>
        <plugins>
            <plugin>

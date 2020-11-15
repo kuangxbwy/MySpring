@@ -3,8 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MyBatis/MyBatis.iml" filepath="$PROJECT_DIR$/MyBatis/MyBatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring1/Spring1.iml" filepath="$PROJECT_DIR$/Spring1/Spring1.iml" />
       <module fileurl="file://$PROJECT_DIR$/myspring.iml" filepath="$PROJECT_DIR$/myspring.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ssm/ssm.iml" filepath="$PROJECT_DIR$/ssm/ssm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot/springboot.iml" filepath="$PROJECT_DIR$/springboot/springboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc/springmvc.iml" filepath="$PROJECT_DIR$/springmvc/springmvc.iml" />
     </modules>
   </component>
 </project>

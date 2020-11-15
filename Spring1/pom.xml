@@ -12,4 +12,17 @@
     <artifactId>Spring1</artifactId>
 
 
+    <dependencies>
+        <!--redis==redisson -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.13.3</version>
+        </dependency>
+        <!--tomcat-jdbc-->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jdbc</artifactId>
+        </dependency>
+    </dependencies>
 </project>

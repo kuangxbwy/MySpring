@@ -7,12 +7,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="MyBatis" />
-        <module name="ssm" />
+        <module name="Spring1" />
+        <module name="springboot" />
+        <module name="springmvc" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="demo" target="1.8" />
       <module name="MyBatis" target="1.8" />
       <module name="myspring" target="1.8" />
+      <module name="Spring1" target="1.8" />
+      <module name="springboot" target="1.8" />
+      <module name="springboot_crud" target="1.8" />
+      <module name="springmvc" target="1.8" />
       <module name="ssm" target="1.8" />
     </bytecodeTargetLevel>
   </component>

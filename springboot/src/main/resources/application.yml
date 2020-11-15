@@ -1,0 +1,44 @@
+
+person:
+  name: kk
+  age: 18
+  happy: true
+  birth: 2000/01/01 #必须写规范
+  maps: {k1: v1,k2: v2}
+  lists:
+   - d
+   - a
+   - c
+  dog:
+    name: 阿黄
+    age:  3
+
+
+#spring:
+#  datasource:
+#    username: root
+#    password: 123456
+#    #?serverTimezone=UTC解决时区的报错
+#    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf-8
+#    driver-class-name: com.mysql.jdbc.Driver
+
+#server:
+#  port: 8080
+#spring:
+#  profiles:
+#    active: dev
+#
+#---
+#
+#
+#server:
+#  port: 8081
+#spring:
+#  profiles: dev
+#
+#
+#---
+#server:
+#  port: 8082
+#spring:
+#  profiles: prod
