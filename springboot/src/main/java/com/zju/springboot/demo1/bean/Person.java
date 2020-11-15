@@ -36,7 +36,6 @@ import java.util.Map;
 public class Person {
     @NotNull(message="名字不能为空")
     private String name;
-    private String userName;
     @Max(value=120,message="年龄最大不能查过120")
     private Integer age;
     private Boolean happy;

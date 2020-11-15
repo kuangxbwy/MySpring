@@ -3,6 +3,7 @@ package com.zju.springboot;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -14,6 +15,7 @@ class SpringbootApplicationTests {
 	DataSource dataSource;
 
 	@Test
+
 	public void testJdbc() throws SQLException {
 		//看一下默认数据源
 		System.out.println(dataSource.getClass());
