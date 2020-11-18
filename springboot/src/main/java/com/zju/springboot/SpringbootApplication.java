@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 //@PropertySource(value = {"classpath:jdbc.properties"})
 //@ImportResource(value = {"classpath:spring.xml"})
 public class SpringbootApplication {
-
+///
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootApplication.class, args);
 	}
